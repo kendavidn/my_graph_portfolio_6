@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kene David Nwosu – GenAI Portfolio</title>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fbf8f5;
+      --text: #1e1e1e;
+      --accent: #a3d18c; /* pastel green similar to screenshot */
+      --shadow: rgba(0,0,0,.05);
+    }
+
+    *,*:before,*:after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden; /* prevent horizontal scroll from decorative shapes */
+    }
+
+    /* ---------- NAV ---------- */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      padding: 1.25rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+      background: var(--bg);
+    }
+    .brand {
+      display: flex; align-items: center; gap: .5rem;
+      font-weight: 800; font-size: 1rem;
+    }
+    .brand .blob {
+      width: 28px; height: 28px;
+      background: var(--accent);
+      border-radius: 50% 40% 60% 50% / 50% 60% 40% 50%; /* irregular circle */
+    }
+    .nav a {
+      text-decoration: none;
+      font-weight: 600;
+      color: var(--text);
+      border-bottom: 2px solid transparent;
+    }
+    .nav a:hover { border-bottom-color: var(--text); }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+      align-items: center;
+      gap: 3rem;
+      padding: 7rem 2rem 4rem; /* extra top padding to account for fixed nav */
+    }
+    .intro {
+      display: flex; flex-direction: column;
+      gap: 1.25rem;
+    }
+    .intro p {
+      font-size: 1rem;
+      max-width: 380px;
+    }
+    .socials {
+      display: flex; gap: 1rem; font-size: 1.25rem;
+    }
+    .socials a { color: var(--text); text-decoration: none; }
+
+    /* ---------- PROFILE IMAGE WITH ORGANIC SHAPE ---------- */
+    .portrait-wrapper {
+      position: relative;
+      width: 280px; height: 280px;
+      margin: 0 auto;
+      filter: drop-shadow(0 8px 12px var(--shadow));
+    }
+    .portrait-wrapper:before {
+      content: "";
+      position: absolute;
+      inset: -25px -40px -30px -45px; /* create oversize shape */
+      background: #1e1e1e;
+      border-radius: 50% 40% 50% 60% / 60% 50% 40% 50%;
+      z-index: 0;
+      transform: rotate(-15deg);
+    }
+    .portrait {
+      position: relative;
+      width: 100%; height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      z-index: 1;
+      border: 4px solid var(--bg);
+    }
+
+    /* ---------- NAME ---------- */
+    .name {
+      font-size: clamp(2rem,6vw,3.5rem);
+      font-weight: 800;
+      line-height: 1.1;
+    }
+    .name small { display: block; font-weight: 300; font-size: .75rem; margin-top: .25rem; }
+
+    /* ---------- SECTIONS ---------- */
+    section { padding: 4rem 2rem; max-width: 1000px; margin: 0 auto; }
+    section h2 { font-size: 1.75rem; margin-bottom: 1.5rem; font-weight: 800; color: var(--text); }
+
+    /* course modules grid */
+    .modules {
+      margin-top: 2rem;
+      display: grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap: 1.25rem;
+    }
+    .module {
+      background: #ffffffee;
+      padding: 1rem 1.25rem;
+      border-radius: 8px;
+      border-left: 4px solid var(--accent);
+      box-shadow: 0 4px 8px var(--shadow);
+    }
+    .module h3 { font-size: 1rem; font-weight: 600; margin-bottom: .5rem; }
+    .module p { font-size: .875rem; }
+
+    /* submissions list */
+    .submissions ul { list-style:none; }
+    .submissions li { padding:.5rem 0; border-bottom:1px dashed #ddd; }
+    .submissions span { color:#888; }
+
+    /* FOOTER */
+    footer {
+      text-align: center; padding: 2rem 1rem; font-size: .875rem;
+    }
+
+    /* ------ RESPONSIVE TWEAKS ------ */
+    @media(max-width:768px){
+      .nav{padding:1rem;}
+      .portrait-wrapper{width:220px;height:220px;}
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="nav">
+    <div class="brand"><span class="blob"></span> KENE NWOSU</div>
+    <nav>
+      <a href="#about-course">Course</a>
+      <a href="#submissions">Submissions</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section (About Me) -->
+  <section class="hero" id="about-me">
+    <div class="intro">
+      <div class="name">Kene David Nwosu <small>PhD Candidate · Data Analyst · Educator</small></div>
+      <p>I’m a researcher and developer who helps health & life‑science teams leverage data and AI. I co‑founded <em>The GRAPH Courses</em> and build R/Shiny tools for organisations such as WHO.</p>
+      <div class="socials">
+        <a href="https://github.com/kendavidn" aria-label="GitHub">&#9728;</a>
+        <a href="https://www.linkedin.com/in/kendavidn" aria-label="LinkedIn">&#9670;</a>
+        <!-- placeholder unicode icons; replace with SVG if desired -->
+      </div>
+    </div>
+    <div class="portrait-wrapper">
+      <img src="https://placehold.co/600x600" alt="Portrait of Kene David Nwosu" class="portrait">
+    </div>
+  </section>
+
+  <!-- About the Course -->
+  <section id="about-course">
+    <h2>About the Course</h2>
+    <p><strong>Generative AI for Work &amp; Research Productivity</strong> is an eight‑week, hands‑on programme where you’ll learn to automate data analysis, content creation, and routine tasks using modern AI tools — without writing code. Highlights include:</p>
+    <ul>
+      <li>Automating documents, spreadsheets &amp; data workflows</li>
+      <li>AI‑powered literature reviews &amp; knowledge management</li>
+      <li>Building custom chatbots &amp; retrieval‑augmented systems</li>
+      <li>Creating visuals &amp; presentations with generative models</li>
+      <li>A capstone project to showcase your applied skills</li>
+    </ul>
+
+    <!-- Course Modules Grid -->
+    <div class="modules">
+      <div class="module"><h3>Content &amp; Websites</h3><p>LLM fundamentals, no‑code sites, AI presentations.</p></div>
+      <div class="module"><h3>Automated Data Analysis</h3><p>Code Interpreter, Julius, Windsurf, dashboards.</p></div>
+      <div class="module"><h3>Research &amp; Text Analysis</h3><p>Literature search, summarisation, sentiment analysis.</p></div>
+      <div class="module"><h3>Custom GPTs &amp; Chatbots</h3><p>RAG workflows, API integrations, Botpress.</p></div>
+      <div class="module"><h3>AI Task Automation</h3><p>Lindy, Make.com, GSheets and Gmail automations.</p></div>
+      <div class="module"><h3>Communication &amp; Outreach</h3><p>Ideogram visuals, marketing flows, video production.</p></div>
+    </div>
+  </section>
+
+  <!-- Weekly Submissions -->
+  <section id="submissions" class="submissions">
+    <h2>My Weekly Submissions</h2>
+    <p>Links will be added as the course progresses.</p>
+    <ul>
+      <li>Week&nbsp;1 – <span>coming soon</span></li>
+      <li>Week&nbsp;2 – <span>coming soon</span></li>
+      <li>Week&nbsp;3 – <span>coming soon</span></li>
+      <li>Week&nbsp;4 – <span>coming soon</span></li>
+      <li>Week&nbsp;5 – <span>coming soon</span></li>
+      <li>Week&nbsp;6 – <span>coming soon</span></li>
+      <li>Week&nbsp;7 – <span>coming soon</span></li>
+      <li>Week&nbsp;8 – <span>coming soon</span></li>
+    </ul>
+  </section>
+
+  <footer>
+    &copy; 2025 Kene David Nwosu • Generative AI Portfolio
+  </footer>
+</body>
+</html>
