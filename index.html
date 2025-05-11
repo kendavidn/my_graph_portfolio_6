@@ -10,7 +10,7 @@
     :root {
       --bg: #fbf8f5;
       --text: #1e1e1e;
-      --accent: #a3d18c; /* pastel green similar to screenshot */
+      --accent: #a3d18c; /* pastel green */
       --shadow: rgba(0,0,0,.05);
     }
 
@@ -21,7 +21,7 @@
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
-      overflow-x: hidden; /* prevent horizontal scroll from decorative shapes */
+      overflow-x: hidden;
     }
 
     /* ---------- NAV ---------- */
@@ -42,7 +42,7 @@
     .brand .blob {
       width: 28px; height: 28px;
       background: var(--accent);
-      border-radius: 50% 40% 60% 50% / 50% 60% 40% 50%; /* irregular circle */
+      border-radius: 50% 40% 60% 50% / 50% 60% 40% 50%;
     }
     .nav a {
       text-decoration: none;
@@ -59,7 +59,7 @@
       grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
       align-items: center;
       gap: 3rem;
-      padding: 7rem 2rem 4rem; /* extra top padding to account for fixed nav */
+      padding: 7rem 2rem 4rem; /* extra top padding for fixed nav */
     }
     .intro {
       display: flex; flex-direction: column;
@@ -69,10 +69,6 @@
       font-size: 1rem;
       max-width: 380px;
     }
-    .socials {
-      display: flex; gap: 1rem; font-size: 1.25rem;
-    }
-    .socials a { color: var(--text); text-decoration: none; }
 
     /* ---------- PROFILE IMAGE WITH ORGANIC SHAPE ---------- */
     .portrait-wrapper {
@@ -84,7 +80,7 @@
     .portrait-wrapper:before {
       content: "";
       position: absolute;
-      inset: -25px -40px -30px -45px; /* create oversize shape */
+      inset: -25px -40px -30px -45px;
       background: #1e1e1e;
       border-radius: 50% 40% 50% 60% / 60% 50% 40% 50%;
       z-index: 0;
@@ -157,15 +153,10 @@
   <section class="hero" id="about-me">
     <div class="intro">
       <div class="name">Kene David Nwosu <small>PhD Candidate · Data Analyst · Educator</small></div>
-      <p>I’m a researcher and developer who helps health & life‑science teams leverage data and AI. I co‑founded <em>The GRAPH Courses</em> and build R/Shiny tools for organisations such as WHO.</p>
-      <div class="socials">
-        <a href="https://github.com/kendavidn" aria-label="GitHub">&#9728;</a>
-        <a href="https://www.linkedin.com/in/kendavidn" aria-label="LinkedIn">&#9670;</a>
-        <!-- placeholder unicode icons; replace with SVG if desired -->
-      </div>
+      <p>I’m a researcher and developer who helps health &amp; life‑science teams leverage data and AI. I co‑founded <em>The GRAPH Courses</em> and build R/Shiny tools for organisations such as WHO.</p>
     </div>
     <div class="portrait-wrapper">
-      <img src="https://github.com/kendavidn/my_graph_portfolio_6/blob/main/CleanShot%202025-05-07%20at%2014.09.30.jpg?raw=true" alt="Portrait of Kene David Nwosu" class="portrait">
+      <img src="https://raw.githubusercontent.com/kendavidn/my_graph_portfolio_6/main/CleanShot%202025-05-07%20at%2014.09.30.jpg" alt="Kene David Nwosu" class="portrait">
     </div>
   </section>
 
@@ -175,7 +166,7 @@
     <p><strong>Generative AI for Work &amp; Research Productivity</strong> is an eight‑week, hands‑on programme where you’ll learn to automate data analysis, content creation, and routine tasks using modern AI tools — without writing code. Highlights include:</p>
     <ul>
       <li>Automating documents, spreadsheets &amp; data workflows</li>
-      <li>AI‑powered literature search &amp; knowledge management</li>
+      <li>AI‑powered literature reviews &amp; knowledge management</li>
       <li>Building custom chatbots &amp; retrieval‑augmented systems</li>
       <li>Creating visuals &amp; presentations with generative models</li>
       <li>A capstone project to showcase your applied skills</li>
